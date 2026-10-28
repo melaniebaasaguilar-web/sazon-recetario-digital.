@@ -1,3 +1,4 @@
+
 const API_URL = "https://www.themealdb.com/api/json/v1/1";
 
 const formulario = document.getElementById("form-busqueda");
@@ -97,4 +98,3 @@ formulario.addEventListener("submit", (evento) => {
 });
 
 buscarRecetas("chicken");
-
