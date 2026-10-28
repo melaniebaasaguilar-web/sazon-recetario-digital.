@@ -1,1 +1,72 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sazón | Recetario Digital</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="encabezado">
+    <a href="#" class="logo">🍃 Sazón</a>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#recetas">Recetas</a>
+      <a href="#favoritos">Favoritos</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="hero-contenido">
+        <p class="etiqueta">Tu cocina, tu inspiración</p>
+        <h1>Descubre el placer de cocinar</h1>
+        <p>
+          Explora deliciosas recetas, descubre nuevos sabores
+          y encuentra inspiración para tu próxima comida.
+        </p>
+        <a href="#recetas" class="boton">Explorar recetas</a>
+      </div>
+    </section>
+
+    <section id="recetas" class="seccion-recetas">
+      <h2>Encuentra tu próxima receta</h2>
+      <p>Busca un platillo y descubre cómo prepararlo.</p>
+
+      <form id="form-busqueda" class="buscador">
+        <input
+          type="search"
+          id="buscar-receta"
+          placeholder="Ejemplo: Chicken, pasta, rice..."
+          aria-label="Buscar recetas"
+          required
+        >
+        <button type="submit">Buscar</button>
+      </form>
+
+      <p id="mensaje-estado" role="status" aria-live="polite">
+        Próximamente podrás explorar recetas.
+      </p>
+
+      <div id="contenedor-recetas" class="grid-recetas">
+      </div>
+    </section>
+
+    <section id="favoritos" class="seccion-favoritos">
+      <h2>Mis recetas favoritas</h2>
+      <p>Guarda aquí tus platillos preferidos.</p>
+      <div id="contenedor-favoritos" class="grid-recetas">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Sazón — Recetario Digital © 2026</p>
+    <p>Proyecto académico desarrollado con apoyo de ChatGPT.</p>
+  </footer>
+
+</body>
+</html>
