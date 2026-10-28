@@ -24,16 +24,11 @@ html {
 }
 
 body {
-  margin: 0;
-  background: var(--crema);
-  color: var(--texto);
-  font-family: 'DM Sans', Arial, sans-serif;
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
 }
 
 h1, h2, h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  line-height: 1.2;
+  font-family: Georgia, serif;
 }
 
 a {
