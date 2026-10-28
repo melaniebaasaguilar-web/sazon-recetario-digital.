@@ -4,69 +4,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sazón | Recetario Digital</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
-</head>
-<body>
+  <meta name="description" content="Sazón, tu recetario digital para descubrir deliciosos platillos.">
 
+  <title>Sazón | Recetario Digital</title>
+
+  <link rel="stylesheet" href="./styles.css?v=3">
+  <script src="./script.js?v=3" defer></script>
+</head>
+
+<body>
   <header class="encabezado">
-    <a href="#" class="logo">🍃 Sazón</a>
-    <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#recetas">Recetas</a>
-      <a href="#favoritos">Favoritos</a>
-    </nav>
+    <div class="barra-navegacion">
+      <a href="#inicio" class="logo">Sazón<span>.</span></a>
+
+      <nav aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#recetas">Recetas</a>
+        <a href="#favoritos">Favoritos</a>
+      </nav>
+    </div>
   </header>
 
   <main>
+    <!-- BIENVENIDA -->
     <section id="inicio" class="hero">
       <div class="hero-contenido">
-        <p class="etiqueta">Tu cocina, tu inspiración</p>
-        <h1>Descubre el placer de cocinar</h1>
+        <span class="etiqueta">COCINA CON INSPIRACIÓN</span>
+
+        <h1>
+          Cada receta cuenta
+          <span>una historia.</span>
+        </h1>
+
         <p>
-          Explora deliciosas recetas, descubre nuevos sabores
-          y encuentra inspiración para tu próxima comida.
+          Descubre sabores, explora nuevas recetas
+          y disfruta preparando deliciosos platillos
+          desde la comodidad de tu cocina.
         </p>
-        <a href="#recetas" class="boton">Explorar recetas</a>
+
+        <a href="#recetas" class="boton boton-principal">
+          Explorar recetas
+        </a>
+      </div>
+
+      <div class="hero-imagen">
+        <img
+          src="https://www.themealdb.com/images/media/meals/llcbn01574260722.jpg"
+          alt="Platillo preparado para disfrutar"
+        >
       </div>
     </section>
 
-    <section id="recetas" class="seccion-recetas">
-      <h2>Encuentra tu próxima receta</h2>
-      <p>Busca un platillo y descubre cómo prepararlo.</p>
+    <!-- BUSCADOR Y RECETAS -->
+    <section id="recetas" class="seccion">
+      <div class="titulo-seccion">
+        <span class="etiqueta">DESCUBRE NUEVOS SABORES</span>
+        <h2>Encuentra tu próxima receta</h2>
+        <p>
+          Busca por nombre y encuentra platillos
+          deliciosos para preparar en casa.
+        </p>
+      </div>
 
       <form id="form-busqueda" class="buscador">
+        <label for="buscar-receta" class="sr-only">
+          Nombre de la receta
+        </label>
+
         <input
           type="search"
           id="buscar-receta"
-          placeholder="Ejemplo: Chicken, pasta, rice..."
-          aria-label="Buscar recetas"
+          placeholder="Ejemplo: chicken, pasta, beef..."
           required
         >
-        <button type="submit">Buscar</button>
+
+        <button type="submit" class="boton boton-principal">
+          Buscar recetas
+        </button>
       </form>
 
-      <p id="mensaje-estado" role="status" aria-live="polite">
-        Próximamente podrás explorar recetas.
+      <p id="mensaje-estado" class="mensaje" role="status" aria-live="polite">
+        Cargando recetas...
       </p>
 
-      <div id="contenedor-recetas" class="grid-recetas">
-      </div>
+      <div id="contenedor-recetas" class="grid-recetas"></div>
     </section>
 
-    <section id="favoritos" class="seccion-favoritos">
-      <h2>Mis recetas favoritas</h2>
-      <p>Guarda aquí tus platillos preferidos.</p>
-      <div id="contenedor-favoritos" class="grid-recetas">
+    <!-- FAVORITOS -->
+    <section id="favoritos" class="seccion seccion-favoritos">
+      <div class="titulo-seccion">
+        <span class="etiqueta">TUS PLATILLOS ESPECIALES</span>
+        <h2>Mis recetas favoritas</h2>
+        <p>
+          Guarda las recetas que más te gusten
+          para encontrarlas fácilmente.
+        </p>
       </div>
+
+      <p id="mensaje-favoritos" class="mensaje" role="status"></p>
+
+      <div id="contenedor-favoritos" class="grid-recetas"></div>
     </section>
   </main>
 
-  <footer>
-    <p>Sazón — Recetario Digital © 2026</p>
-    <p>Proyecto académico desarrollado con apoyo de ChatGPT.</p>
-  </footer>
+  <!-- VENTANA DE DETALLES -->
+  <dialog id="modal-receta" class="modal">
+    <div class="modal-contenido">
+      <button
+        type="button"
+        id="cerrar-modal"
+        class="cerrar-modal"
+        aria-label="Cerrar receta"
+      >
+        &times;
+      </button>
 
+      <div id="detalle-receta"></div>
+    </div>
+  </dialog>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="footer">
+    <h2>Sazón<span>.</span></h2>
+
+    <p>Descubre, cocina y comparte momentos deliciosos.</p>
+
+    <p class="copyright">
+      © 2026 Sazón — Recetario Digital.
+    </p>
+
+    <p>
+      Proyecto académico desarrollado con apoyo de ChatGPT.
+      Recetas proporcionadas por TheMealDB.
+    </p>
+  </footer>
 </body>
 </html>
