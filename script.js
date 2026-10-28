@@ -1,466 +1,351 @@
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
-
-:root {
-  --crema: #faf8f2;
-  --blanco: #ffffff;
-  --verde: #486b58;
-  --verde-oscuro: #254435;
-  --verde-claro: #eaf0e8;
-  --terracota: #c67656;
-  --terracota-oscuro: #ad5b3e;
-  --texto: #2b342d;
-  --gris: #667168;
-  --borde: #e1e6dd;
-  --sombra: 0 8px 25px rgba(33, 55, 38, 0.08);
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  background: var(--crema);
-  color: var(--texto);
-  font-family: 'DM Sans', Arial, sans-serif;
-  line-height: 1.6;
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', Georgia, serif;
-  line-height: 1.2;
-}
-
-a {
-  text-decoration: none;
-}
-
-button, input {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-img {
-  max-width: 100%;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-}
-
-/* ENCABEZADO */
-
-.encabezado {
-  background: var(--blanco);
-  box-shadow: 0 2px 15px rgba(0,0,0,0.04);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.barra-navegacion {
-  max-width: 1250px;
-  margin: auto;
-  padding: 20px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--verde-oscuro);
-}
-
-.logo span,
-.footer h2 span {
-  color: var(--terracota);
-}
-
-nav {
-  display: flex;
-  gap: 32px;
-}
-
-nav a {
-  color: var(--texto);
-  font-weight: 600;
-  transition: color 0.2s;
-}
-
-nav a:hover {
-  color: var(--terracota);
-}
-
-/* HERO */
-
-.hero {
-  max-width: 1250px;
-  margin: auto;
-  padding: 90px 30px;
-  min-height: 550px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 55px;
-  align-items: center;
-}
-
-.etiqueta {
-  color: var(--terracota);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.hero h1 {
-  font-size: clamp(42px, 5vw, 68px);
-  color: var(--verde-oscuro);
-  margin: 20px 0;
-}
-
-.hero h1 span {
-  color: var(--terracota);
-}
-
-.hero p {
-  font-size: 17px;
-  color: var(--gris);
-  max-width: 520px;
-  margin-bottom: 30px;
-}
-
-.hero-imagen img {
-  width: 100%;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 28px;
-  box-shadow: var(--sombra);
-}
-
-/* BOTONES */
-
-.boton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 28px;
-  border: none;
-  border-radius: 12px;
-  font-weight: 700;
-  transition: 0.2s;
-}
-
-.boton-principal {
-  background: var(--verde);
-  color: white;
-}
-
-.boton-principal:hover {
-  background: var(--verde-oscuro);
-  transform: translateY(-2px);
-}
-
-/* SECCIONES */
-
-.seccion {
-  max-width: 1250px;
-  margin: auto;
-  padding: 75px 30px;
-}
-
-.titulo-seccion {
-  text-align: center;
-  margin-bottom: 35px;
-}
-
-.titulo-seccion h2 {
-  font-size: clamp(30px, 4vw, 42px);
-  color: var(--verde-oscuro);
-  margin: 12px 0;
-}
-
-.titulo-seccion p {
-  color: var(--gris);
-  max-width: 600px;
-  margin: auto;
-}
-
-/* BUSCADOR */
-
-.buscador {
-  display: flex;
-  gap: 12px;
-  max-width: 750px;
-  margin: 0 auto 35px;
-}
-
-.buscador input {
-  flex: 1;
-  min-width: 0;
-  border: 1px solid var(--borde);
-  border-radius: 12px;
-  background: white;
-  padding: 16px 20px;
-  outline: none;
-  font-size: 16px;
-}
-
-.buscador input:focus {
-  border-color: var(--verde);
-  box-shadow: 0 0 0 3px rgba(72,107,88,0.1);
-}
-
-.mensaje {
-  text-align: center;
-  color: var(--verde);
-  font-weight: 600;
-  margin: 20px 0;
-}
-
-/* TARJETAS */
-
-.grid-recetas {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
-}
-
-.tarjeta-receta {
-  background: white;
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: var(--sombra);
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-
-.tarjeta-receta:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(33,55,38,0.15);
-}
-
-.tarjeta-receta img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
-}
-
-.tarjeta-contenido {
-  padding: 22px;
-}
-
-.tarjeta-contenido h3 {
-  color: var(--verde-oscuro);
-  font-size: 23px;
-  margin: 8px 0 12px;
-}
-
-.categoria {
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--terracota);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.tarjeta-botones {
-  display: flex;
-  gap: 8px;
-  margin-top: 20px;
-  flex-wrap: wrap;
-}
-
-.boton-detalle {
-  background: var(--verde);
-  color: white;
-  border: none;
-  border-radius: 9px;
-  padding: 11px 16px;
-  font-weight: 600;
-  flex: 1;
-}
-
-.boton-detalle:hover {
-  background: var(--verde-oscuro);
-}
-
-.boton-favorito {
-  background: var(--verde-claro);
-  color: var(--verde-oscuro);
-  border: 1px solid var(--borde);
-  border-radius: 9px;
-  padding: 11px 14px;
-  font-weight: 600;
-}
-
-.boton-favorito:hover {
-  background: #d8e6d5;
-}
-
-.boton-favorito.activo {
-  background: #fde8df;
-  color: var(--terracota-oscuro);
-  border-color: #eac5b5;
-}
-
-/* FAVORITOS */
-
-.seccion-favoritos {
-  background: var(--verde-claro);
-  max-width: none;
-  padding-left: max(30px, calc((100% - 1190px) / 2));
-  padding-right: max(30px, calc((100% - 1190px) / 2));
-}
-
-/* MODAL */
-
-.modal {
-  position: fixed;
-  max-width: 760px;
-  width: calc(100% - 30px);
-  max-height: 90vh;
-  border: none;
-  padding: 0;
-  border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-  overflow-y: auto;
-}
-
-.modal::backdrop {
-  background: rgba(19,37,25,0.7);
-}
-
-.modal-contenido {
-  padding: 35px;
-  position: relative;
-}
-
-.cerrar-modal {
-  position: absolute;
-  top: 12px;
-  right: 15px;
-  border: none;
-  background: var(--verde-claro);
-  color: var(--verde-oscuro);
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  font-size: 28px;
-}
-
-.detalle-imagen {
-  width: 100%;
-  max-height: 300px;
-  object-fit: cover;
-  border-radius: 14px;
-}
-
-.detalle-titulo {
-  color: var(--verde-oscuro);
-  font-size: 35px;
-  margin: 20px 0 10px;
-}
-
-.detalle-subtitulo {
-  color: var(--verde-oscuro);
-  font-size: 24px;
-  margin-top: 25px;
-}
-
-.lista-ingredientes {
-  padding-left: 24px;
-}
-
-.instrucciones {
-  white-space: pre-line;
-  overflow-wrap: anywhere;
-}
-
-/* FOOTER */
-
-.footer {
-  background: var(--verde-oscuro);
-  color: white;
-  text-align: center;
-  padding: 45px 20px;
-}
-
-.footer h2 {
-  font-size: 35px;
-  margin: 0;
-}
-
-.footer p {
-  color: #d4dfd6;
-}
-
-.copyright {
-  font-size: 13px;
-}
-
-/* CELULARES */
-
-@media (max-width: 768px) {
-  .barra-navegacion {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  nav {
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 55px 22px;
-    gap: 30px;
-  }
-
-  .hero-imagen img {
-    height: 290px;
-  }
-
-  .seccion {
-    padding: 50px 20px;
-  }
-
-  .buscador {
-    flex-direction: column;
-  }
-
-  .grid-recetas {
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 18px;
-  }
-
-  .modal-contenido {
-    padding: 25px 18px;
+"use strict";
+
+// CONFIGURACIÓN DE LA API
+const API_URL = "https://www.themealdb.com/api/json/v1/1";
+const CLAVE_FAVORITOS = "sazon_favoritos";
+
+// ELEMENTOS DE LA PÁGINA
+const formulario = document.getElementById("form-busqueda");
+const buscador = document.getElementById("buscar-receta");
+const contenedor = document.getElementById("contenedor-recetas");
+const mensaje = document.getElementById("mensaje-estado");
+
+const contenedorFavoritos = document.getElementById("contenedor-favoritos");
+const mensajeFavoritos = document.getElementById("mensaje-favoritos");
+
+const modal = document.getElementById("modal-receta");
+const detalleReceta = document.getElementById("detalle-receta");
+const cerrarModal = document.getElementById("cerrar-modal");
+
+// DATOS DE LA APLICACIÓN
+let favoritos = cargarFavoritos();
+let ultimaBusqueda = [];
+let controladorBusqueda = null;
+
+// CARGAR FAVORITOS GUARDADOS
+function cargarFavoritos() {
+  try {
+    const datos = JSON.parse(
+      localStorage.getItem(CLAVE_FAVORITOS) || "[]"
+    );
+
+    return Array.isArray(datos) ? datos : [];
+  } catch (error) {
+    console.warn("No se pudieron leer los favoritos:", error);
+    return [];
   }
 }
 
-@media (max-width: 480px) {
-  .grid-recetas {
-    grid-template-columns: 1fr;
-  }
-
-  .hero h1 {
-    font-size: 40px;
+// GUARDAR FAVORITOS
+function guardarFavoritos() {
+  try {
+    localStorage.setItem(
+      CLAVE_FAVORITOS,
+      JSON.stringify(favoritos)
+    );
+    return true;
+  } catch (error) {
+    console.error("No se pudieron guardar los favoritos:", error);
+    return false;
   }
 }
+
+// COMPROBAR SI UNA RECETA ES FAVORITA
+function esFavorito(id) {
+  return favoritos.some(
+    receta => receta.idMeal === id
+  );
+}
+
+// AGREGAR O QUITAR FAVORITO
+function alternarFavorito(receta) {
+  const anteriores = [...favoritos];
+
+  if (esFavorito(receta.idMeal)) {
+    favoritos = favoritos.filter(
+      item => item.idMeal !== receta.idMeal
+    );
+  } else {
+    favoritos.push(receta);
+  }
+
+  if (!guardarFavoritos()) {
+    favoritos = anteriores;
+    alert("No se pudieron guardar los favoritos en este navegador.");
+    return;
+  }
+
+  mostrarRecetas(ultimaBusqueda);
+  mostrarFavoritos();
+}
+
+// CREAR UNA TARJETA
+function crearTarjeta(receta) {
+  const tarjeta = document.createElement("article");
+  tarjeta.className = "tarjeta-receta";
+
+  const imagen = document.createElement("img");
+  imagen.src = receta.strMealThumb;
+  imagen.alt = `Fotografía de ${receta.strMeal}`;
+  imagen.loading = "lazy";
+
+  const contenido = document.createElement("div");
+  contenido.className = "tarjeta-contenido";
+
+  const categoria = document.createElement("span");
+  categoria.className = "categoria";
+  categoria.textContent = receta.strCategory || "Receta";
+
+  const titulo = document.createElement("h3");
+  titulo.textContent = receta.strMeal;
+
+  const botones = document.createElement("div");
+  botones.className = "tarjeta-botones";
+
+  const botonDetalle = document.createElement("button");
+  botonDetalle.className = "boton-detalle";
+  botonDetalle.type = "button";
+  botonDetalle.textContent = "Ver receta";
+
+  botonDetalle.addEventListener("click", () => {
+    abrirDetalle(receta);
+  });
+
+  const botonFavorito = document.createElement("button");
+  botonFavorito.type = "button";
+  botonFavorito.className = "boton-favorito";
+
+  const actualizarBoton = () => {
+    const activo = esFavorito(receta.idMeal);
+    botonFavorito.textContent = activo
+      ? "♥ Guardada"
+      : "♡ Guardar";
+
+    botonFavorito.classList.toggle("activo", activo);
+    botonFavorito.setAttribute(
+      "aria-pressed",
+      String(activo)
+    );
+  };
+
+  actualizarBoton();
+
+  botonFavorito.addEventListener("click", () => {
+    alternarFavorito(receta);
+  });
+
+  botones.append(botonDetalle, botonFavorito);
+  contenido.append(categoria, titulo, botones);
+  tarjeta.append(imagen, contenido);
+
+  return tarjeta;
+}
+
+// MOSTRAR RECETAS
+function mostrarRecetas(recetas) {
+  contenedor.replaceChildren();
+
+  recetas.forEach(receta => {
+    contenedor.appendChild(crearTarjeta(receta));
+  });
+}
+
+// MOSTRAR FAVORITOS
+function mostrarFavoritos() {
+  contenedorFavoritos.replaceChildren();
+
+  if (favoritos.length === 0) {
+    mensajeFavoritos.textContent =
+      "Todavía no tienes recetas favoritas. ¡Guarda alguna!";
+    return;
+  }
+
+  mensajeFavoritos.textContent =
+    `Tienes ${favoritos.length} recetas guardadas.`;
+
+  favoritos.forEach(receta => {
+    contenedorFavoritos.appendChild(crearTarjeta(receta));
+  });
+}
+
+// OBTENER INGREDIENTES
+function obtenerIngredientes(receta) {
+  const ingredientes = [];
+
+  for (let i = 1; i <= 20; i++) {
+    const ingrediente = receta[`strIngredient${i}`];
+    const cantidad = receta[`strMeasure${i}`];
+
+    if (ingrediente && ingrediente.trim()) {
+      ingredientes.push(
+        `${(cantidad || "").trim()} ${ingrediente.trim()}`.trim()
+      );
+    }
+  }
+
+  return ingredientes;
+}
+
+// ABRIR DETALLE DE RECETA
+function abrirDetalle(receta) {
+  detalleReceta.replaceChildren();
+
+  const imagen = document.createElement("img");
+  imagen.src = receta.strMealThumb;
+  imagen.alt = receta.strMeal;
+  imagen.className = "detalle-imagen";
+
+  const titulo = document.createElement("h2");
+  titulo.className = "detalle-titulo";
+  titulo.textContent = receta.strMeal;
+
+  const categoria = document.createElement("p");
+  categoria.className = "categoria";
+  categoria.textContent = receta.strCategory || "Receta";
+
+  const tituloIngredientes = document.createElement("h3");
+  tituloIngredientes.className = "detalle-subtitulo";
+  tituloIngredientes.textContent = "Ingredientes";
+
+  const lista = document.createElement("ul");
+  lista.className = "lista-ingredientes";
+
+  obtenerIngredientes(receta).forEach(ingrediente => {
+    const elemento = document.createElement("li");
+    elemento.textContent = ingrediente;
+    lista.appendChild(elemento);
+  });
+
+  const tituloPreparacion = document.createElement("h3");
+  tituloPreparacion.className = "detalle-subtitulo";
+  tituloPreparacion.textContent = "Preparación";
+
+  const instrucciones = document.createElement("p");
+  instrucciones.className = "instrucciones";
+  instrucciones.textContent =
+    receta.strInstructions || "Instrucciones no disponibles.";
+
+  detalleReceta.append(
+    imagen,
+    titulo,
+    categoria,
+    tituloIngredientes,
+    lista,
+    tituloPreparacion,
+    instrucciones
+  );
+
+  modal.showModal();
+}
+
+// CERRAR VENTANA
+cerrarModal.addEventListener("click", () => {
+  modal.close();
+});
+
+modal.addEventListener("click", evento => {
+  if (evento.target === modal) {
+    modal.close();
+  }
+});
+
+// CONSULTAR RECETAS EN THEMEALDB
+async function buscarRecetas(nombre) {
+  if (controladorBusqueda) {
+    controladorBusqueda.abort();
+  }
+
+  const controlador = new AbortController();
+  controladorBusqueda = controlador;
+
+  let tiempoAgotado = false;
+
+  const temporizador = setTimeout(() => {
+    tiempoAgotado = true;
+    controlador.abort();
+  }, 10000);
+
+  contenedor.replaceChildren();
+  mensaje.textContent = "Buscando recetas deliciosas...";
+
+  try {
+    const url =
+      `${API_URL}/search.php?s=${encodeURIComponent(nombre)}`;
+
+    const respuesta = await fetch(url, {
+      signal: controlador.signal
+    });
+
+    if (respuesta.status === 429) {
+      throw new Error("LIMITE");
+    }
+
+    if (!respuesta.ok) {
+      throw new Error(`HTTP ${respuesta.status}`);
+    }
+
+    const datos = await respuesta.json();
+
+    const recetas = Array.isArray(datos.meals)
+      ? datos.meals
+      : [];
+
+    ultimaBusqueda = recetas;
+
+    if (recetas.length === 0) {
+      mensaje.textContent =
+        "No encontramos recetas. Prueba con otro nombre.";
+      return;
+    }
+
+    mostrarRecetas(recetas);
+
+    mensaje.textContent =
+      `Encontramos ${recetas.length} recetas para ti.`;
+
+  } catch (error) {
+    if (error.name === "AbortError" && !tiempoAgotado) {
+      return;
+    }
+
+    console.error("Error al buscar recetas:", error);
+
+    ultimaBusqueda = [];
+
+    if (error.message === "LIMITE") {
+      mensaje.textContent =
+        "Se alcanzó el límite de solicitudes. Intenta más tarde.";
+    } else if (tiempoAgotado) {
+      mensaje.textContent =
+        "La consulta tardó demasiado. Intenta nuevamente.";
+    } else {
+      mensaje.textContent =
+        "No fue posible cargar las recetas. Revisa tu conexión.";
+    }
+  } finally {
+    clearTimeout(temporizador);
+
+    if (controladorBusqueda === controlador) {
+      controladorBusqueda = null;
+    }
+  }
+}
+
+// FORMULARIO DE BÚSQUEDA
+formulario.addEventListener("submit", evento => {
+  evento.preventDefault();
+
+  const nombre = buscador.value.trim();
+
+  if (!nombre) {
+    mensaje.textContent = "Escribe el nombre de una receta.";
+    return;
+  }
+
+  buscarRecetas(nombre);
+});
+
+// INICIAR APLICACIÓN
+mostrarFavoritos();
+buscarRecetas("chicken");
