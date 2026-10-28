@@ -1,4 +1,3 @@
-
 "use strict";
 
 // CONFIGURACIÓN DE LA API
